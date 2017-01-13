@@ -228,7 +228,7 @@ class Llvm < Formula
       args << "-DLLVM_BUILD_LLVM_DYLIB=ON"
     end
 
-    args << "-DLLVM_ENABLE_LIBCXX=ON" if build_libcxx?
+    args << "-DLLVM_ENABLE_LIBCXX=ON -DLIBCXX_INSTALL_EXPERIMENTAL_LIBRARY=ON" if build_libcxx?
 
     if build.with?("lldb") && build.with?("python")
       args << "-DLLDB_RELOCATABLE_PYTHON=ON"
